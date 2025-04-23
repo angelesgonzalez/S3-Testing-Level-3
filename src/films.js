@@ -40,7 +40,19 @@ const orderAlphabetically = (array) => {
 };
 
 // Exercise 5: Order by year, ascending
-function orderByYear() {}
+
+const orderByYear = (array) => {
+  const arrayCopy = [...array];
+
+  arrayCopy.sort((a, b) => {
+    if (a.year - b.year === 0) {
+      return a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1;
+    }
+    return a.year - b.year;
+  });
+
+  return arrayCopy;
+};
 
 // Exercise 6: Calculate the average of the movies in a category
 function moviesAverageByCategory() {}
