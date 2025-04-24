@@ -1,9 +1,9 @@
 // Exercise 1: Get the array of all directors.
-function getAllDirectors(array) {
+
+const getAllDirectors = (array) => {
   let result = array.map((movie) => movie.director);
-  console.log('EXERCICE 1 ->', result);
   return result;
-}
+};
 
 // Exercise 2: Get the films of a certain director
 
@@ -55,7 +55,6 @@ const orderByYear = (array) => {
 };
 
 // Exercise 6: Calculate the average of the movies in a category
-// function moviesAverageByCategory() { }
 
 const moviesAverageByCategory = (array, genre) => {
   const filteredMovies = array.filter((movie) => movie.genre.includes(genre));
@@ -88,18 +87,17 @@ const hoursToMinutes = (array) => {
 
 // Exercise 8: Get the best film of a year
 
-const bestFilmOfYear = () => {};
+const bestFilmOfYear = (array, year) => {
+  const filteredMovies = array.filter((movie) => movie.year == year);
+  const maxScore = Math.max(...filteredMovies.map((movie) => movie.score));
+  const bestMovies = filteredMovies.filter((movie) => movie.score === maxScore);
+  return bestMovies;
+};
+
 /*
-- Exercici 8
-Ja estàs arribant al final, només fa falta implementar una última 
-funcionalitat!
-Els usuaris/àries necessiten saber quina pel·lícula és la millor de cada any. 
-Per dur a terme aquesta funcionalitat, hauràs de crear 
-una funció que accepti l'any, i retorni la millor pel·lícula d'aquest any.
+-
 
-*/
-
-// The following is required to make unit tests work.
+The following is required to make unit tests work.
 /* Environment setup. Do not modify the below code. */
 if (typeof module !== 'undefined') {
   module.exports = {

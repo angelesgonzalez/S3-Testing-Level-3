@@ -160,7 +160,7 @@ Return the movie with the highest score from the specified year.
 Use `.filter()` to select movies from the given year, then `.reduce()` to find the one with the highest score.
 
 **Test Screenshot:**  
-![Exercise 8 Test](./screenshots/exercise8.png)
+![Exercise 8 Test](./screenshots/Exercise-8-bestFilmOfYear.png)
 
 ---
 
