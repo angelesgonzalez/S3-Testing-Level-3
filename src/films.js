@@ -55,10 +55,30 @@ const orderByYear = (array) => {
 };
 
 // Exercise 6: Calculate the average of the movies in a category
-function moviesAverageByCategory() {}
+// function moviesAverageByCategory() { }
+
+const moviesAverageByCategory = (array, genre) => {
+  const filteredMovies = array.filter((movie) => movie.genre.includes(genre));
+  const preTotal = filteredMovies.reduce((total, movie) => {
+    return total + movie.score;
+  }, 0);
+  const average = Number((preTotal / filteredMovies.length).toFixed(2));
+  return average;
+};
 
 // Exercise 7: Modify the duration of movies to minutes
-function hoursToMinutes() {}
+
+const hoursToMinutes = (array) => {
+  const newArray = array.map((movie) => {
+    if (typeof movie.duration === 'string') {
+      const [hours, minutes] = parseInt(movie.duration.split(' '));
+      return { ...movie, duration: Number(hours * 60 + minutes) };
+    }
+    return { ...movie };
+  });
+
+  return newArray;
+};
 
 // Exercise 8: Get the best film of a year
 function bestFilmOfYear() {}
