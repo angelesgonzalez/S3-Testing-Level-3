@@ -16,8 +16,8 @@ This project is part of the IT Academy's Sprint 3, focusing on building the core
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/angelesgonzalez/S3-Testing-Level-1.git
-   cd S3-Testing-Level-1
+   git clone https://github.com/angelesgonzalez/S3-Testing-Level-3.git
+   cd S3-Testing-Level-3
    ```
 
 2. Install dependencies:
