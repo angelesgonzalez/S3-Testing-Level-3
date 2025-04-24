@@ -69,9 +69,15 @@ const moviesAverageByCategory = (array, genre) => {
 // Exercise 7: Modify the duration of movies to minutes
 
 const hoursToMinutes = (array) => {
-  const newArray = array.map((movie) => {
+  let newArray = array.map((movie) => {
     if (typeof movie.duration === 'string') {
-      const [hours, minutes] = parseInt(movie.duration.split(' '));
+      let [hours, minutes] = movie.duration.split(' ');
+      hours = parseInt(hours);
+      minutes = parseInt(minutes);
+
+      if (!hours) return { ...movie, duration: Number(minutes) };
+      if (!minutes) return { ...movie, duration: Number(hours * 60) };
+
       return { ...movie, duration: Number(hours * 60 + minutes) };
     }
     return { ...movie };
@@ -81,7 +87,17 @@ const hoursToMinutes = (array) => {
 };
 
 // Exercise 8: Get the best film of a year
-function bestFilmOfYear() {}
+
+const bestFilmOfYear = () => {};
+/*
+- Exercici 8
+Ja estàs arribant al final, només fa falta implementar una última 
+funcionalitat!
+Els usuaris/àries necessiten saber quina pel·lícula és la millor de cada any. 
+Per dur a terme aquesta funcionalitat, hauràs de crear 
+una funció que accepti l'any, i retorni la millor pel·lícula d'aquest any.
+
+*/
 
 // The following is required to make unit tests work.
 /* Environment setup. Do not modify the below code. */
