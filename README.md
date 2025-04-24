@@ -1,86 +1,181 @@
-# Sprint 3 IT Academy | Video management tool
+# 🎬 Sprint 3 – Movie Management Tool
 
-## Introduction
+## 📋 Project Overview
 
-A company in the audiovisual sector has asked us for a web application that will allow their employees to quickly find movies from a large database they have, since the process is currently done manually.
+This project is part of the IT Academy's Sprint 3, focusing on building the core logic for a movie management web application. The goal is to implement functions that filter, sort, and analyze a dataset of movies, all of these while passing tests using Jest framework.
 
-You will be in charge of setting up the core of the application: all the logic of filtering and sorting of movies. You have 2 weeks to finish, which is how long this sprint lasts.
+## 🚀 Getting Started
 
-<br>
+### Prerequisites
 
-## Requirements
+- Node.js installed on your machine.
+- A code editor like Visual Studio Code.
 
+### Installation
 
-1. Clone this repo
-```bash
-$ git clone https://github.com/IT-Academy-BCN/starter-code-frontend-sprint-3-movies
-```
+1. Clone the repository:
 
-2. Unlink your repo from the itacademy repository
-```bash
-$ git remote rm origin
-```
+   ```bash
+   git clone https://github.com/angelesgonzalez/S3-Testing-Level-1.git
+   cd S3-Testing-Level-1
+   ```
 
-3. Link your repo to the repository you have to create in your github account
-```bash
-$ git remote add origin <your repo name!>
-```
+2. Install dependencies:
 
-<br>
+   ```bash
+   npm install
+   ```
 
-## Submission
+### Running Tests
 
-1. Upon completion, run the following commands:
+To run the test suite and verify your implementations:
 
 ```bash
-$ git add .
-$ git commit -m "Sprint Solution"
-$ git push origin master
+npm test
 ```
 
-2. Create Pull Request.
+---
 
-3. Upload the link to the virtual campus so that your mentor can correct it and give you feedback.
+## 🧪 Exercises
 
+### 🟢 Level 1
 
+#### ✅ Exercise 1: Get All Directors
 
-<br>
+**Function:** `getAllDirectors(movies)`
 
-## Introduction
+**Description:**  
+Return an array containing the names of all directors from the movie dataset.
 
-The statement of the exercise is available on the virtual campus.
+**Hint:**  
+Use the `.map()` method to extract the `director` property from each movie object.
 
-<br>
+**Test Screenshot:**  
+![Exercise 1 Test](./screenshots/Exercise-1-GetAllDirectors.png)
 
-## Tests!
+---
 
+#### ✅ Exercise 2: Get Movies from a Specific Director
 
-```shell
-$ npm install
-$ npm run test:watch
+**Function:** `getMoviesFromDirector(movies, director)`
+
+**Description:**  
+Return an array of movies directed by the specified director.
+
+**Hint:**  
+Use the `.filter()` method to select movies where the `director` matches the given name.
+
+**Test Screenshot:**  
+![Exercise 2 Test](./screenshots/Exercise-2-getMoviesFromDirector.png)
+
+---
+
+#### ✅ Exercise 3: Calculate Average Score of a Director's Movies
+
+**Function:** `moviesAverageOfDirector(movies, director)`
+
+**Description:**  
+Calculate and return the average score of all movies directed by the specified director, rounded to two decimal places.
+
+**Hint:**  
+Use `.filter()` to get the director's movies, then `.reduce()` to sum their scores, and finally divide by the number of movies.
+
+**Test Screenshot:**  
+![Exercise 3 Test](./screenshots/Exercise-3-moviesAverageOfDirectors.png)
+
+---
+
+#### ✅ Exercise 4: Alphabetical Order of Movie Titles
+
+**Function:** `orderAlphabetically(movies)`
+
+**Description:**  
+Return an array of the first 20 movie titles sorted alphabetically.
+
+**Hint:**  
+Use `.map()` to extract titles, `.sort()` to sort them, and `.slice()` to get the first 20.
+
+**Test Screenshot:**  
+![Exercise 4 Test](./screenshots/Exercise-4-orderAlphabetically.png)
+
+---
+
+#### ✅ Exercise 5: Order Movies by Year
+
+**Function:** `orderByYear(movies)`
+
+**Description:**  
+Return an array of movies sorted by year in ascending order. If two movies have the same year, sort them alphabetically by title.
+
+**Hint:**  
+Use `.sort()` with a custom comparator that first compares years and then titles.
+
+**Test Screenshot:**  
+![Exercise 5 Test](./screenshots/Exercise-5-orderByYear.png)
+
+---
+
+#### ✅ Exercise 6: Average Score by Genre
+
+**Function:** `moviesAverageByCategory(movies, genre)`
+
+**Description:**  
+Calculate and return the average score of movies in the specified genre, rounded to two decimal places.
+
+**Hint:**  
+Use `.filter()` to select movies that include the genre, then `.reduce()` to sum their scores.
+
+**Test Screenshot:**  
+![Exercise 6 Test](./screenshots/Exercise-6-averageScoreByCategory.png)
+
+---
+
+### 🟡 Level 2
+
+#### ✅ Exercise 7: Convert Movie Durations to Minutes
+
+**Function:** `hoursToMinutes(movies)`
+
+**Description:**  
+Convert the `duration` property of each movie from a string format (e.g., "2h 34min") to an integer representing the total number of minutes.
+
+**Hint:**  
+Use string manipulation methods to parse hours and minutes, then calculate the total duration in minutes.
+
+**Test Screenshot:**  
+![Exercise 7 Test](./screenshots/Exercise-7-hoursToMinute.png)
+
+---
+
+### 🔴 Level 3
+
+#### ✅ Exercise 8: Best Film of the Year
+
+**Function:** `bestFilmOfYear(movies, year)`
+
+**Description:**  
+Return the movie with the highest score from the specified year.
+
+**Hint:**  
+Use `.filter()` to select movies from the given year, then `.reduce()` to find the one with the highest score.
+
+**Test Screenshot:**  
+![Exercise 8 Test](./screenshots/Exercise-8-bestFilmOfYear.png)
+
+---
+
+## 📁 Directory Structure
+
 ```
-
-And last, open the generated `test-results.html` file with the "Live Server" VSCode extension to see test results.
-
-Apart from the statement, you will know exactly what you are asked to do by looking at the file `tests/films.spec.js`, all tests are already defined here!
-
-<br>
-
-## Instructions
-
-You have the following indications from the frontend responsible:
-
-- It is mandatory to implement all loops in ES6 (using map, reduce, filter and sort to manipulate arrays).
-
-- As at the moment we don't consume data from a server using an API, we will work with data from the src/data.js archive. For the moment we will implement the logic using
-an array of information about 250 movies.
-
-- The implementation is about processing this array of movies, to display it as requested in each exercise.
-
-- The logic to implement will be placed in the src/films.js file.
-
-- You don't need to show the result of each function on the screen. Your goal is to pass the tests.  More information on how to program oriented to pass tests at the end of the document.
-
-- Don't forget to include the capture of the test results in the virtual campus.
-
-
+S3-Testing-Level-1/
+├── src/
+│   └── index.js
+├── tests/
+│   └── films.spec.js
+├── screenshots/
+│   ├── exercise1.png
+│   ├── exercise2.png
+│   └── ...
+├── package.json
+└── README.md
+```
