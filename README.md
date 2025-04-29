@@ -51,7 +51,7 @@ Return an array containing the names of all directors from the movie dataset.
 Use the `.map()` method to extract the `director` property from each movie object.
 
 **Test Screenshot:**  
-![Exercise 1 Test](./screenshots/Exercise-1-GetAllDirectors.png)
+![Exercise 1 Test](./Dry-run/Exercise-1-GetAllDirectors.png)
 
 ---
 
@@ -66,7 +66,7 @@ Return an array of movies directed by the specified director.
 Use the `.filter()` method to select movies where the `director` matches the given name.
 
 **Test Screenshot:**  
-![Exercise 2 Test](./screenshots/Exercise-2-getMoviesFromDirector.png)
+![Exercise 2 Test](./Dry-run/Exercise-2-getMoviesFromDirector.png)
 
 ---
 
@@ -81,7 +81,7 @@ Calculate and return the average score of all movies directed by the specified d
 Use `.filter()` to get the director's movies, then `.reduce()` to sum their scores, and finally divide by the number of movies.
 
 **Test Screenshot:**  
-![Exercise 3 Test](./screenshots/Exercise-3-moviesAverageOfDirectors.png)
+![Exercise 3 Test](./Dry-run/Exercise-3-moviesAverageOfDirectors.png)
 
 ---
 
@@ -96,7 +96,7 @@ Return an array of the first 20 movie titles sorted alphabetically.
 Use `.map()` to extract titles, `.sort()` to sort them, and `.slice()` to get the first 20.
 
 **Test Screenshot:**  
-![Exercise 4 Test](./screenshots/Exercise-4-orderAlphabetically.png)
+![Exercise 4 Test](./Dry-run/Exercise-4-orderAlphabetically.png)
 
 ---
 
@@ -111,7 +111,7 @@ Return an array of movies sorted by year in ascending order. If two movies have 
 Use `.sort()` with a custom comparator that first compares years and then titles.
 
 **Test Screenshot:**  
-![Exercise 5 Test](./screenshots/Exercise-5-orderByYear.png)
+![Exercise 5 Test](./Dry-run/Exercise-5-orderByYear.png)
 
 ---
 
@@ -126,7 +126,7 @@ Calculate and return the average score of movies in the specified genre, rounded
 Use `.filter()` to select movies that include the genre, then `.reduce()` to sum their scores.
 
 **Test Screenshot:**  
-![Exercise 6 Test](./screenshots/Exercise-6-averageScoreByCategory.png)
+![Exercise 6 Test](./Dry-run/Exercise-6-averageScoreByCategory.png)
 
 ---
 
@@ -143,7 +143,7 @@ Convert the `duration` property of each movie from a string format (e.g., "2h 34
 Use string manipulation methods to parse hours and minutes, then calculate the total duration in minutes.
 
 **Test Screenshot:**  
-![Exercise 7 Test](./screenshots/Exercise-7-hoursToMinute.png)
+![Exercise 7 Test](./Dry-run/Exercise-7-hoursToMinute.png)
 
 ---
 
@@ -160,7 +160,7 @@ Return the movie with the highest score from the specified year.
 Use `.filter()` to select movies from the given year, then `.reduce()` to find the one with the highest score.
 
 **Test Screenshot:**  
-![Exercise 8 Test](./screenshots/Exercise-8-bestFilmOfYear.png)
+![Exercise 8 Test](./Dry-run/Exercise-8-bestFilmOfYear.png)
 
 ---
 
@@ -172,7 +172,7 @@ S3-Testing-Level-1/
 │   └── index.js
 ├── tests/
 │   └── films.spec.js
-├── screenshots/
+├── Dry-run/
 │   ├── exercise1.png
 │   ├── exercise2.png
 │   └── ...

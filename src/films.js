@@ -1,45 +1,41 @@
-// Exercise 1: Get the array of all directors.
+// Exercise 1
 
 const getAllDirectors = (array) => {
   let result = array.map((movie) => movie.director);
   return result;
 };
 
-// Exercise 2: Get the films of a certain director
+// Exercise 2
 
 const getMoviesFromDirector = (array, director) => {
   const filtered = array.filter((element) => element.director == director);
   return filtered;
 };
 
-// Exercise 3: Calculate the average of the films of a given director.
+// Exercise 3
 
 const moviesAverageOfDirector = (array, director) => {
   const filteredMovies = getMoviesFromDirector(array, director);
-  const preTotal = filteredMovies.reduce((total, movie) => {
+  let preTotal = filteredMovies.reduce((total, movie) => {
     return total + movie.score;
   }, 0);
-  const average = Number((preTotal / filteredMovies.length).toFixed(2));
+  let average = Number((preTotal / filteredMovies.length).toFixed(2));
   return average;
 };
 
-// Exercise 4:  Alphabetic order by title
+// Exercise 4
 
 const orderAlphabetically = (array) => {
   let titles = array.map((element) => element.title);
 
-  let sortedArray = titles.sort((a, b) => {
-    return a.toLowerCase() < b.toLowerCase() ? -1 : 1;
-  });
+  let sortedArray = titles.sort((a, b) =>
+    a.localeCompare(b, undefined, { sensitivity: 'base' })
+  );
 
-  sortedArray.length >= 20
-    ? (titles = sortedArray.slice(0, 20))
-    : (titles = sortedArray);
-
-  return titles;
+  return sortedArray.slice(0, 20);
 };
 
-// Exercise 5: Order by year, ascending
+// Exercise 5
 
 const orderByYear = (array) => {
   const arrayCopy = [...array];
@@ -54,18 +50,18 @@ const orderByYear = (array) => {
   return arrayCopy;
 };
 
-// Exercise 6: Calculate the average of the movies in a category
+// Exercise 6
 
 const moviesAverageByCategory = (array, genre) => {
   const filteredMovies = array.filter((movie) => movie.genre.includes(genre));
-  const preTotal = filteredMovies.reduce((total, movie) => {
+  let preTotal = filteredMovies.reduce((total, movie) => {
     return total + movie.score;
   }, 0);
-  const average = Number((preTotal / filteredMovies.length).toFixed(2));
+  let average = Number((preTotal / filteredMovies.length).toFixed(2));
   return average;
 };
 
-// Exercise 7: Modify the duration of movies to minutes
+// Exercise 7
 
 const hoursToMinutes = (array) => {
   let newArray = array.map((movie) => {
@@ -85,12 +81,12 @@ const hoursToMinutes = (array) => {
   return newArray;
 };
 
-// Exercise 8: Get the best film of a year
+// Exercise 8
 
 const bestFilmOfYear = (array, year) => {
   const filteredMovies = array.filter((movie) => movie.year == year);
-  const maxScore = Math.max(...filteredMovies.map((movie) => movie.score));
-  const bestMovies = filteredMovies.filter((movie) => movie.score === maxScore);
+  let maxScore = Math.max(...filteredMovies.map((movie) => movie.score));
+  let bestMovies = filteredMovies.filter((movie) => movie.score === maxScore);
   return bestMovies;
 };
 
